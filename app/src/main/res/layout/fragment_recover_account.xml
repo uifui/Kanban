@@ -14,19 +14,20 @@
         android:id="@+id/linearlayout1">
 
         <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:navigationIcon="@drawable/ic_back"
-            android:padding="40dp">
+            android:paddingTop="40dp" >
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Recuperar Conta"
+                android:text="Criar conta"
                 android:textColor="@color/white"
-                android:layout_gravity="center_horizontal"/>
-        </com.google.android.material.appbar.MaterialToolbar>
+                android:layout_gravity="center_horizontal" />
 
+        </com.google.android.material.appbar.MaterialToolbar>
 
         <LinearLayout
             android:id="@+id/linearlayout2"
@@ -54,6 +55,7 @@
                 />
 
             <EditText
+                android:id="@+id/editEmail"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:hint="Digite seu e-mail"
