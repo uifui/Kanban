@@ -17,6 +17,7 @@
         android:orientation="vertical"
         android:layout_marginHorizontal="25dp"
         >
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -26,16 +27,16 @@
             android:id="@+id/editEmail"
             android:layout_width="match_parent"
             android:layout_height="48dp"
-            android:hint="Digite seu e-mail"
+            android:hint="@string/hint_edit_email"
             android:inputType="textEmailAddress"
             android:style="@style/EditTextTheme"
             android:layout_marginTop="4dp"
-
             />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Senha"
+            android:text="@string/password_text"
             android:textColor="@color/white"
             android:layout_marginTop="16dp"/>
 
@@ -44,7 +45,7 @@
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:inputType="textPassword"
-            android:hint="Digite sua senha"
+            android:hint="@string/hint_edit_password"
             android:style="@style/EditTextTheme"
             android:layout_marginTop="4dp"
 
@@ -56,11 +57,10 @@
             android:layout_height="wrap_content"
             android:text="Login"
             android:textColor="@color/color_default"
-            android:backgroundTint="@null"
             android:layout_marginTop="16dp"
-            app:backgroundTint="@null"
-            android:background="@drawable/bg_btn"
+            style="@style/ButtonTheme"
             />
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
