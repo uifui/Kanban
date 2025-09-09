@@ -30,12 +30,13 @@ class LoginFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initListener()
-        validateData()
+
     }
 
     private fun initListener(){
         binding.btnLogin.setOnClickListener {
             findNavController().navigate(R.id.action_global_homeFragment)
+            validateData()
         }
         binding.btnRegister.setOnClickListener {
             findNavController().navigate(R.id.action_loginFragment_to_registerFragment)
