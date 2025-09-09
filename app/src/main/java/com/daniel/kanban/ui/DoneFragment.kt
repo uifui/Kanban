@@ -36,7 +36,7 @@ class DoneFragment : Fragment() {
     }
 
     private fun initRecyclerViewTask() {
-        val taskAdapter = TaskAdapter(requireContext(),){ task, option -> optionSelected(task,option)}
+        taskAdapter = TaskAdapter(requireContext(),){ task, option -> optionSelected(task,option)}
         binding.recyclerviewTask.layoutManager = LinearLayoutManager(requireContext())
         binding.recyclerviewTask.setHasFixedSize(true)
         binding.recyclerviewTask.adapter = taskAdapter
