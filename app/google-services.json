@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "196311444065",
+    "project_id": "taskapp-c90cc",
+    "storage_bucket": "taskapp-c90cc.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:196311444065:android:66b10897b5656a03635820",
+        "android_client_info": {
+          "package_name": "com.daniel.kanban"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAmpeGuLDZaw6Tm_xi5ojcnBNj2xmHJ9Do"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
