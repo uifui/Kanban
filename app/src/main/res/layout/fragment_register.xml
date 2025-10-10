@@ -14,17 +14,18 @@
         android:id="@+id/linearlayout1">
 
         <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             app:navigationIcon="@drawable/ic_back"
-            android:padding="40dp">
+            android:paddingTop="40dp" >
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Criar Conta"
+                android:text="Criar conta"
                 android:textColor="@color/white"
-                android:layout_gravity="center_horizontal"/>
+                android:layout_gravity="center_horizontal" />
 
         </com.google.android.material.appbar.MaterialToolbar>
 
@@ -42,13 +43,13 @@
                 android:text="E-Mail"
                 android:textColor="@color/white"/>
             <EditText
+                android:id="@+id/editEmail"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:hint="Digite seu e-mail"
                 android:inputType="textEmailAddress"
-                android:padding="10dp"
                 android:layout_marginTop="4dp"
-                android:background="@drawable/bg_edit_text"
+                style="@style/EditTextTheme"
                 />
             <TextView
                 android:layout_width="wrap_content"
@@ -58,24 +59,23 @@
                 android:layout_marginTop="16dp"/>
 
             <EditText
+                android:id="@+id/editSenha"
                 android:layout_width="match_parent"
                 android:layout_height="48dp"
                 android:inputType="textPassword"
                 android:hint="Digite sua senha"
-                android:padding="10dp"
                 android:layout_marginTop="4dp"
-                android:background="@drawable/bg_edit_text"
+                style="@style/EditTextTheme"
                 />
 
             <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnRegister"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Enviar"
-                android:textColor="@color/color_default"
-                android:backgroundTint="@null"
+                style="@style/ButtonTheme"
                 android:layout_marginTop="16dp"
-                app:backgroundTint="@null"
-                android:background="@drawable/bg_btn"
+
                 />
 
             <ProgressBar
@@ -83,9 +83,18 @@
                 android:layout_height="wrap_content"
                 android:indeterminateTint="@color/white"
                 android:layout_gravity="center"
-                android:layout_marginTop="8dp"/>
+                android:layout_marginTop="8dp"
+                android:visibility="invisible"
+                tools:visibility="visible"
+                />
 
         </LinearLayout>
+
+        <TextView
+            android:id="@+id/Nome2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Daniel Christi" />
 
     </LinearLayout>
 
