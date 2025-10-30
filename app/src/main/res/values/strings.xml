@@ -31,6 +31,15 @@
         <string name="text_button_recover_account_fragment">Enviar</string>
 
         <string name="description_empty_form_task_fragment">Preencha uma descrição.</string>
+    
+        <string name="text_title_dialog_confirm_logout">Deseja sair da sua conta?</string>
+        <string name="text_button_dialog_confirm_logout">Confirmar</string>
+        <string name="text_message_dialog_confirm_logout">Aperte em confirmar para sair da sua conta</string>
+    
+        <string name="text_message_recover_account_fragment">Email de confirmação enviado!</string>
+
+        <string name="text_save_sucess_form_task_fragment">Task salva com sucesso!</string>
+        <string name="error_generic">Erro generico</string>
 
         <string name="app_name">Kanban</string>
     </resources>

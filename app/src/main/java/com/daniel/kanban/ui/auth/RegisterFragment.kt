@@ -18,8 +18,6 @@ class RegisterFragment : Fragment() {
     private var _binding: FragmentRegisterBinding? = null
     private val binding get() = _binding!!
 
-
-
     private lateinit var auth: FirebaseAuth
 
     override fun onCreateView(
@@ -30,11 +28,9 @@ class RegisterFragment : Fragment() {
         _binding = FragmentRegisterBinding.inflate(inflater, container, false)
         return binding.root
     }
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initListener()
-
 
     }
     private fun validateData(){
@@ -51,7 +47,11 @@ class RegisterFragment : Fragment() {
             ).show()
         }
         else{
-            //mostrar mensagem de erro
+            Toast.makeText(
+                requireContext(),
+                "Erro email ou senha vazios",
+                Toast.LENGTH_SHORT
+            ).show()
 
         }
     }
@@ -66,7 +66,7 @@ class RegisterFragment : Fragment() {
 
         try {
 
-            val auth = FirebaseAuth.getInstance()
+            auth = FirebaseAuth.getInstance()
 
             auth.createUserWithEmailAndPassword(email, password)
                 .addOnCompleteListener { task ->

@@ -6,17 +6,21 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.core.view.isVisible
 import androidx.navigation.fragment.findNavController
 import com.daniel.kanban.R
 import com.daniel.kanban.databinding.FragmentLoginBinding
 import com.daniel.kanban.databinding.FragmentRegisterBinding
 import com.daniel.kanban.ui.showBottomSheet
+import com.google.firebase.auth.FirebaseAuth
 
 
 class LoginFragment : Fragment() {
 
     private var _binding: FragmentLoginBinding? = null
     private val binding get() = _binding!!
+
+    private lateinit var auth: FirebaseAuth
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -35,7 +39,6 @@ class LoginFragment : Fragment() {
 
     private fun initListener(){
         binding.btnLogin.setOnClickListener {
-            findNavController().navigate(R.id.action_global_homeFragment)
             validateData()
         }
         binding.btnRegister.setOnClickListener {
@@ -50,17 +53,33 @@ class LoginFragment : Fragment() {
         val email = binding.editEmail.text.toString().trim()
         val senha = binding.editSenha.text.toString().trim()
 
-        if (email.isNotBlank()) {
-            if (senha.isNotBlank()) {
-                //Comentário temporário somente para testar a validação dos dados
-                findNavController().navigate(R.id.action_global_homeFragment)
-            } else {
-                showBottomSheet(message =  getString(R.string.password_empty))
+        try {
+            binding.progressBar.isVisible = true
+
+            auth = FirebaseAuth.getInstance()
+            auth.signInWithEmailAndPassword(email, senha).addOnCompleteListener { task ->
+                if (task.isSuccessful) {
+                    Toast.makeText(
+                        requireContext(),
+                        "Logado com sucesso",
+                        Toast.LENGTH_SHORT
+                    ).show()
+                    binding.progressBar.isVisible = false
+                    findNavController().navigate(R.id.action_global_homeFragment)
+                } else {
+                    Toast.makeText(
+                        requireContext(),
+                        task.exception?.message,
+                        Toast.LENGTH_SHORT
+                    ).show()
+                    binding.progressBar.isVisible = true
+                }
             }
-        } else {
-            showBottomSheet(message = getString(R.string.email_empty))
+        } catch (erro: Exception) {
+            Toast.makeText(requireContext(), erro.message.toString(), Toast.LENGTH_SHORT).show()
         }
     }
+
 
     override fun onDestroyView() {
         super.onDestroyView()
